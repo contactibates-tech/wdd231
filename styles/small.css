@@ -1,0 +1,181 @@
+:root {
+  --teal-dark: #0f3d3e;
+  --teal: #0b5c5e;
+  --teal-tint: #d7efe9;
+  --amber: #f2a541;
+  --ink: #17252a;
+  --paper: #f3f6f8;
+  --white: #ffffff;
+  --line: #c3ced4;
+  --font: "Lexend", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--teal); }
+
+h1, h2 { line-height: 1.25; margin: 0 0 0.75rem; }
+h1 { font-size: 1.9rem; }
+h2 { font-size: 1.3rem; color: var(--teal-dark); }
+p { margin: 0 0 1rem; }
+
+:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+
+/* ---------- Header and navigation ---------- */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--teal-dark);
+  color: var(--white);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.menu-button {
+  font: inherit;
+  font-size: 1.75rem;
+  line-height: 1;
+  min-width: 48px;
+  min-height: 48px;
+  color: var(--white);
+  background: transparent;
+  border: 2px solid var(--white);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.menu-button:hover { background: var(--teal); }
+
+nav { display: none; width: 100%; }
+nav.open { display: block; }
+
+nav ul { list-style: none; margin: 0; padding: 0; }
+
+nav a {
+  display: block;
+  padding: 0.75rem 0.5rem;
+  color: var(--white);
+  text-decoration: none;
+  border-left: 6px solid transparent;   /* reserves space so hover never shifts layout */
+}
+nav a:hover { background: var(--teal); }
+nav a.active {
+  border-left-color: var(--amber);      /* wayfinding */
+  font-weight: 700;
+}
+
+/* ---------- Main ---------- */
+main { padding: 1.25rem 1rem 2rem; max-width: 1200px; margin: 0 auto; }
+
+main > section {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.about img {
+  width: 160px;
+  border-radius: 50%;
+  border: 4px solid var(--amber);
+  margin: 0 auto 1rem;
+}
+
+.goals ul { margin: 0; padding-left: 1.25rem; }
+.goals li { margin-bottom: 0.5rem; }
+
+/* ---------- Filters ---------- */
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+
+.filters button {
+  flex: 1 1 auto;
+  font: inherit;
+  font-weight: 600;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  color: var(--teal-dark);
+  background: var(--white);
+  border: 2px solid var(--teal);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.filters button:hover { background: var(--teal-tint); }
+.filters button[aria-pressed="true"] {
+  color: var(--white);
+  background: var(--teal);
+}
+
+/* ---------- Course cards ---------- */
+.course-cards {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.course-card {
+  padding: 0.75rem 1rem;
+  background: var(--white);
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.course-card.completed {
+  background: var(--teal-tint);
+  border-color: var(--teal);
+}
+.course-card.completed::before {
+  content: "\2714\00a0Completed\00a0\2022\00a0";
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--teal-dark);
+}
+
+.credits { margin: 0; font-size: 1.05rem; }
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: var(--white);
+  background: var(--teal-dark);
+}
+footer p { margin: 0 0 0.5rem; }
+
+.social { display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 1rem; }
+.social a {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+.social a:hover { background: var(--teal); border-color: var(--amber); }

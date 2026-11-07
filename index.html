@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WDD 231 | Course Home Page</title>
+  <meta name="description" content="Isaac Bates' course home page for WDD 231 Web Frontend Development I: a short introduction, my learning goals, and the Web and Computer Programming certificate courses.">
+  <meta name="author" content="Isaac Bates">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
+  <script src="scripts/courses.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <a class="brand" href="index.html">
+      <img src="images/logo.svg" alt="" width="48" height="48">
+      <span>Isaac Bates</span>
+    </a>
+    <button id="menu-button" class="menu-button" type="button"
+            aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">&#9776;</button>
+
+    <nav id="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="chamber/index.html">Chamber</a></li>
+        <li><a href="final/index.html">Final</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Home</h1>
+
+    <section class="about">
+      <h2>About Me</h2>
+      <img src="images/profile.svg" alt="Portrait of Isaac" width="240" height="240">
+      <div>
+        <p>Hello! I'm Isaac, a Software Development student at BYU&ndash;Pathway Worldwide. I enjoy turning ideas into pages people can actually use, and I'm learning to build them with clean HTML, CSS, and JavaScript.</p>
+        <p>I live in Utah, USA, where I balance school, family, and work.</p>
+      </div>
+    </section>
+
+    <section class="goals">
+      <h2>My Goals This Semester</h2>
+      <ul>
+        <li>Build responsive, accessible pages that score 95+ in Lighthouse.</li>
+        <li>Write my own CSS without frameworks or libraries.</li>
+        <li>Fetch and display data with modern JavaScript.</li>
+        <li>Publish every project with GitHub Pages.</li>
+      </ul>
+    </section>
+
+    <section class="certificate">
+      <h2>Web and Computer Programming Certificate</h2>
+
+      <div class="filters" role="group" aria-label="Filter courses">
+        <button type="button" data-filter="all" aria-pressed="true">All Courses</button>
+        <button type="button" data-filter="wdd" aria-pressed="false">WDD Courses</button>
+        <button type="button" data-filter="cse" aria-pressed="false">CSE Courses</button>
+      </div>
+
+      <ul id="course-cards" class="course-cards"></ul>
+
+      <p class="credits" aria-live="polite">
+        Total credits for the courses listed: <strong id="total-credits">0</strong>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social">
+      <a href="https://github.com/yourgithubusername/wdd231" aria-label="GitHub repository">
+        <img src="images/github.svg" alt="" width="28" height="28">
+      </a>
+      <a href="https://www.linkedin.com/in/yourprofile" aria-label="LinkedIn profile">
+        <img src="images/linkedin.svg" alt="" width="28" height="28">
+      </a>
+      <a href="https://www.instagram.com/yourprofile" aria-label="Instagram profile">
+        <img src="images/instagram.svg" alt="" width="28" height="28">
+      </a>
+      <a href="https://www.facebook.com/yourprofile" aria-label="Facebook profile">
+        <img src="images/facebook.svg" alt="" width="28" height="28">
+      </a>
+    </div>
+
+    <p>&copy; <span id="currentyear"></span> | Your Name | Your State/Country</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
+
+</body>
+</html>

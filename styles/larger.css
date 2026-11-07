@@ -1,0 +1,59 @@
+@media (min-width: 700px) {
+
+  /* Horizontal navigation using Flex; the hamburger is hidden */
+  .menu-button { display: none; }
+
+  nav, nav.open { display: block; width: auto; }
+
+  nav ul { display: flex; gap: 0.25rem; }
+
+  nav a {
+    padding: 0.6rem 1rem;
+    border-left: 0;
+    border-bottom: 4px solid transparent;
+    border-radius: 4px 4px 0 0;
+  }
+  nav a.active { border-bottom-color: var(--amber); }
+
+  h1 { font-size: 2.4rem; }
+
+  /* Two-column layout: About | Goals, certificate spans full width */
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  main > h1 { grid-column: 1 / -1; margin: 0; }
+  main > section { margin-bottom: 0; }
+  .certificate { grid-column: 1 / -1; }
+
+  .about {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    column-gap: 1.25rem;
+    align-items: start;
+  }
+  .about h2 { grid-column: 1 / -1; }
+  .about img { margin: 0; width: 160px; }
+
+  .filters button { flex: 0 0 auto; }
+
+  .course-cards { grid-template-columns: repeat(2, 1fr); }
+
+  footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+  }
+  footer p { margin: 0; }
+  .social { margin: 0; justify-content: flex-start; }
+  footer > p:last-child { text-align: right; }
+}
+
+@media (min-width: 1000px) {
+  .course-cards { grid-template-columns: repeat(3, 1fr); }
+  main { grid-template-columns: 3fr 2fr; }
+}
